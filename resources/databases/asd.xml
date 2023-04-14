@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ToDoLists>
+    <ToDoList Name="Facultate" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\graduation-cap.png">
+      <SubToDoLists>
+        <ToDoList Name="EditedIA" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\star.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="MVP" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\graduation-cap.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="DP" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\bulb.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="RC" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\graduation-cap.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="IA" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\graduation-cap.png">
+          <SubToDoLists />
+          <Tasks>
+            <Task Name="Tema MLP Edit" Description="Edit" TaskStatus="false" TaskPriority="High" TaskCategory="Miscellaneous" Deadline="2023-04-26T00:00:00" FinishDate="2023-04-08T23:25:23.421928+03:00" />
+            <Task Name="Tema MLP" Description="MLP" TaskStatus="false" TaskPriority="Medium" TaskCategory="School" Deadline="2023-05-04T00:00:00" FinishDate="0001-01-01T00:00:00" />
+            <Task Name="Test" Description="test" TaskStatus="true" TaskPriority="Low" TaskCategory="Work" Deadline="2023-04-26T00:00:00" FinishDate="2023-04-08T23:25:15.9719278+03:00" />
+          </Tasks>
+        </ToDoList>
+      </SubToDoLists>
+      <Tasks>
+        <Task Name="Marti" Description="Marti" TaskStatus="false" TaskPriority="Low" TaskCategory="Facultate" Deadline="2023-04-11T00:00:00" FinishDate="0001-01-01T00:00:00" />
+      </Tasks>
+    </ToDoList>
+    <ToDoList Name="sada" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\user.png">
+      <SubToDoLists>
+        <ToDoList Name="yees" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\briefcase.png">
+          <SubToDoLists>
+            <ToDoList Name="AnotherSubTDL" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\bulb.png">
+              <SubToDoLists />
+              <Tasks />
+            </ToDoList>
+            <ToDoList Name="noo" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\user.png">
+              <SubToDoLists />
+              <Tasks />
+            </ToDoList>
+          </SubToDoLists>
+          <Tasks>
+            <Task Name="yes" Description="yes" TaskStatus="true" TaskPriority="Low" TaskCategory="Work" Deadline="2023-04-07T00:00:00" FinishDate="2023-04-08T23:25:09.4239764+03:00">
+              <TaskPath>sada -&gt; yees</TaskPath>
+            </Task>
+            <Task Name="noo" Description="nonono&quot;\n&quot;yes" TaskStatus="false" TaskPriority="Medium" TaskCategory="Home" Deadline="2023-04-06T00:00:00" FinishDate="2023-04-08T23:25:05.6559291+03:00" />
+          </Tasks>
+        </ToDoList>
+      </SubToDoLists>
+      <Tasks>
+        <Task Name="1" Description="1" TaskStatus="false" TaskPriority="Medium" TaskCategory="Personal" Deadline="2023-04-11T00:00:00" FinishDate="0001-01-01T00:00:00" />
+        <Task Name="2" Description="2" TaskStatus="true" TaskPriority="Medium" TaskCategory="Work" Deadline="2023-04-09T00:00:00" FinishDate="2023-04-10T22:31:16.2854378+03:00" />
+        <Task Name="3" Description="3" TaskStatus="false" TaskPriority="High" TaskCategory="Facultate" Deadline="2023-04-10T00:00:00" FinishDate="0001-01-01T00:00:00" />
+      </Tasks>
+    </ToDoList>
+    <ToDoList Name="Home" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\home.png">
+      <SubToDoLists>
+        <ToDoList Name="yes123" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\graduation-cap.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="34224325" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\home.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+      </SubToDoLists>
+      <Tasks>
+        <Task Name="Home1" Description="111" TaskStatus="false" TaskPriority="Medium" TaskCategory="Home" Deadline="2023-04-14T00:00:00" FinishDate="0001-01-01T00:00:00">
+          <TaskPath>Home</TaskPath>
+        </Task>
+        <Task Name="Home2" Description="222" TaskStatus="false" TaskPriority="Low" TaskCategory="Home" Deadline="2023-04-13T00:00:00" FinishDate="0001-01-01T00:00:00">
+          <TaskPath>Home</TaskPath>
+        </Task>
+        <Task Name="Home3" Description="3333" TaskStatus="true" TaskPriority="Medium" TaskCategory="Home" Deadline="2023-04-11T00:00:00" FinishDate="2023-04-13T12:50:08.3840075+03:00" />
+        <Task Name="Home4" Description="44444" TaskStatus="false" TaskPriority="High" TaskCategory="Home" Deadline="2023-04-25T00:00:00" FinishDate="2023-04-13T12:49:47.6235204+03:00">
+          <TaskPath>Home</TaskPath>
+        </Task>
+        <Task Name="Home100" Description="1000000" TaskStatus="false" TaskPriority="Medium" TaskCategory="Home" Deadline="2023-04-04T00:00:00" FinishDate="0001-01-01T00:00:00" />
+        <Task Name="Facultate1" Description="111" TaskStatus="false" TaskPriority="Low" TaskCategory="Facultate" Deadline="2023-04-15T00:00:00" FinishDate="0001-01-01T00:00:00">
+          <TaskPath>Home</TaskPath>
+        </Task>
+        <Task Name="Work1" Description="111" TaskStatus="false" TaskPriority="Medium" TaskCategory="Work" Deadline="2023-04-27T00:00:00" FinishDate="0001-01-01T00:00:00">
+          <TaskPath>Home</TaskPath>
+        </Task>
+        <Task Name="yes" Description="yes" TaskStatus="false" TaskPriority="Low" TaskCategory="Work" Deadline="2023-04-28T00:00:00" FinishDate="0001-01-01T00:00:00">
+          <TaskPath>Home</TaskPath>
+        </Task>
+      </Tasks>
+    </ToDoList>
+    <ToDoList Name="34224325" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\home.png">
+      <SubToDoLists />
+      <Tasks />
+    </ToDoList>
+  </ToDoLists>
+  <Categories>
+    <string>Home</string>
+    <string>Personal</string>
+    <string>Facultate</string>
+    <string>Work</string>
+    <string>Pet</string>
+    <string>Various</string>
+  </Categories>
+</Database>

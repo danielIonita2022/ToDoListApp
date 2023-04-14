@@ -1,0 +1,30 @@
+﻿<Window x:Class="ToDoListApp.Views.StatisticsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoListApp.Views"
+        xmlns:VM="clr-namespace:ToDoListApp.ViewModels"
+        mc:Ignorable="d"
+        Title="StatisticsWindow" Height="380" Width="540">
+    <Window.DataContext>
+        <VM:StatisticsVM/>
+    </Window.DataContext>
+    <Grid>
+        <Label Content="Statistics" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" Width="124" Height="49" FontSize="24"/>
+        <Label Content="Tasks due today:" HorizontalAlignment="Left" Margin="70,91,0,0" VerticalAlignment="Top" Height="38" Width="148" FontSize="18"/>
+        <Label Content="Tasks due tomorrow:" HorizontalAlignment="Left" Margin="70,134,0,0" VerticalAlignment="Top" Height="38" Width="178" FontSize="18"/>
+        <Label Content="Tasks overdue:" HorizontalAlignment="Left" Margin="70,172,0,0" VerticalAlignment="Top" Height="38" Width="148" FontSize="18"/>
+        <Label Content="Tasks to be done:" HorizontalAlignment="Left" Margin="70,218,0,0" VerticalAlignment="Top" Height="38" Width="148" FontSize="18"/>
+        <Label Content="Tasks done:" HorizontalAlignment="Left" Margin="70,261,0,0" VerticalAlignment="Top" Height="38" Width="148" FontSize="18"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="70,213,0,0" Stroke="Black" VerticalAlignment="Top" Width="373"/>
+        <TextBlock HorizontalAlignment="Left" Margin="218,98,0,0" TextWrapping="Wrap" Text="{Binding NrOfDeadlineToday}" VerticalAlignment="Top" RenderTransformOrigin="0.303,0.111" Height="27" Width="75" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="248,141,0,0" TextWrapping="Wrap" Text="{Binding NrOfDeadlineTomorrow}" VerticalAlignment="Top" RenderTransformOrigin="0.303,0.111" Height="26" Width="75" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="208,179,0,0" TextWrapping="Wrap" Text="{Binding NrOfOverdue}" VerticalAlignment="Top" RenderTransformOrigin="0.303,0.111" Height="27" Width="75" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="224,225,0,0" TextWrapping="Wrap" Text="{Binding NrOfUndone}" VerticalAlignment="Top" RenderTransformOrigin="0.303,0.111" Height="26" Width="75" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="186,268,0,0" TextWrapping="Wrap" Text="{Binding NrOfDone}" VerticalAlignment="Top" RenderTransformOrigin="0.303,0.111" Height="28" Width="76" FontSize="16"/>
+
+
+
+    </Grid>
+</Window>

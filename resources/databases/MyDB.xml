@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ToDoLists>
+    <ToDoList Name="University" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\graduation-cap.png">
+      <SubToDoLists>
+        <ToDoList Name="MVP" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\bulb.png">
+          <SubToDoLists>
+            <ToDoList Name="NewMVP" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\star.png">
+              <SubToDoLists />
+              <Tasks />
+            </ToDoList>
+          </SubToDoLists>
+          <Tasks>
+            <Task Name="ToDoList" Description="Make a To-Do List App for the MVP course." TaskStatus="false" TaskPriority="High" TaskCategory="School" Deadline="2023-04-27T00:00:00" FinishDate="0001-01-01T00:00:00" />
+            <Task Name="Memory Tiles" Description="Make a Memory Tiles game in C# with WPF" TaskStatus="true" TaskPriority="Medium" TaskCategory="School" Deadline="2023-03-23T00:00:00" FinishDate="2023-04-14T17:46:39.2172648+03:00" />
+          </Tasks>
+        </ToDoList>
+        <ToDoList Name="IA" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\briefcase.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="RC" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\graduation-cap.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="DP" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\bulb.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+        <ToDoList Name="ACS" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\briefcase.png">
+          <SubToDoLists />
+          <Tasks />
+        </ToDoList>
+      </SubToDoLists>
+      <Tasks />
+    </ToDoList>
+    <ToDoList Name="Home" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\home.png">
+      <SubToDoLists />
+      <Tasks>
+        <Task Name="Dishes" Description="Washing dishes" TaskStatus="true" TaskPriority="Medium" TaskCategory="Home" Deadline="2023-04-20T00:00:00" FinishDate="2023-04-14T17:43:18.7110846+03:00" />
+        <Task Name="Cleaning" Description="Clean the house." TaskStatus="false" TaskPriority="High" TaskCategory="Home" Deadline="2023-04-20T00:00:00" FinishDate="0001-01-01T00:00:00" />
+        <Task Name="Garbage" Description="Take out the garbage." TaskStatus="false" TaskPriority="Medium" TaskCategory="Home" Deadline="2023-04-28T00:00:00" FinishDate="0001-01-01T00:00:00" />
+        <Task Name="New furniture" Description="Buy new furniture from the store." TaskStatus="false" TaskPriority="Low" TaskCategory="Miscellaneous" Deadline="2023-04-27T00:00:00" FinishDate="0001-01-01T00:00:00" />
+        <Task Name="Paint the house" Description="Pain the house when the weather is nice." TaskStatus="false" TaskPriority="Medium" TaskCategory="Home" Deadline="2023-04-27T00:00:00" FinishDate="0001-01-01T00:00:00" />
+        <Task Name="Sell TV" Description="Sell the old TV at the garage sale." TaskStatus="false" TaskPriority="Low" TaskCategory="Home" Deadline="2023-04-12T00:00:00" FinishDate="0001-01-01T00:00:00" />
+      </Tasks>
+    </ToDoList>
+    <ToDoList Name="Kitchen" ImagePath="D:\SEM2\MVP\ToDoListApp\ToDoListApp\resources\icons\user.png">
+      <SubToDoLists />
+      <Tasks />
+    </ToDoList>
+  </ToDoLists>
+  <Categories>
+    <string>Home</string>
+    <string>Personal</string>
+    <string>School</string>
+    <string>Work</string>
+    <string>Pet</string>
+    <string>Miscellaneous</string>
+  </Categories>
+</Database>

@@ -1,0 +1,177 @@
+﻿<Window x:Class="ToDoListApp.MainWindow"
+        x:Name="CurrentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoListApp.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        xmlns:VM="clr-namespace:ToDoListApp.ViewModels"
+        xmlns:b="clr-namespace:ToDoListApp.Behaviors"
+       
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <VM:MainWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="797*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <TreeView x:Name="MainTreeView" Margin="0,47,618,10" ItemsSource="{Binding ItemsToDoList}" 
+                  b:TreeViewSelectedItemBehavior.SelectedItemChangedCommand="{Binding SelectedToDoListCommand}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding SubToDoLists}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding ImagePath}" Width="16" Height="16" Margin="0,0,5,0"/>
+                        <Label Content="{Binding Name}"/>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        <ListView ItemsSource="{Binding ItemsTasks}" Margin="181,47,0,170" SelectedItem="{Binding SelectedTask}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="30">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding TaskStatus}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Task Name" Width="180" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Priority" Width="80" DisplayMemberBinding="{Binding TaskPriority}"/>
+                    <GridViewColumn Header="Category" Width="90" DisplayMemberBinding="{Binding TaskCategory}"/>
+                    <GridViewColumn Header="Due Date" Width="160" DisplayMemberBinding="{Binding Deadline}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Task Description" HorizontalAlignment="Left" Margin="184,264,0,0" VerticalAlignment="Top" FontStyle="Italic" RenderTransformOrigin="-0.346,0.686" Height="27" Width="141"/>
+        <TextBlock HorizontalAlignment="Left" Margin="184,296,0,0" TextWrapping="Wrap" Text="{Binding TaskDescription}" VerticalAlignment="Top" Height="128" Width="606"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="181,296,0,0" Stroke="Black" VerticalAlignment="Top" Width="606"/>
+        <Menu Margin="0,0,0,387">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open Database"  Command="{Binding DBLoadedCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/disk.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            <MenuItem Header="_New Database" Command="{Binding NewDBCreatedCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/plus.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Archive Database" Command="{Binding DBSavedCommand}" IsEnabled="{Binding IsButtonEnabled}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/download.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Exit" Command="{Binding ExitCommand}" CommandParameter="{Binding ElementName = CurrentWindow}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/exit.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_TDL" IsEnabled="{Binding IsButtonEnabled}">
+                <MenuItem Header="Add Root TDL" Command="{Binding AddRootTDLCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/add.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Add Sub-TDL" Command="{Binding AddSubTDLCommand}" CommandParameter="{Binding SelectedToDoList}" IsEnabled="{Binding IsTDLSelected}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/add.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Edit" Command="{Binding EditTDLCommand}" IsEnabled="{Binding IsTDLSelected}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/edit.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Delete" Command="{Binding DeleteTDLCommand}" IsEnabled="{Binding IsTDLSelected}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/trash.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Move Up" Command="{Binding MoveUpTDLCommand}" IsEnabled="{Binding IsTDLSelected}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/arrow-small-up.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Move Down" Command="{Binding MoveDownTDLCommand}" IsEnabled="{Binding IsTDLSelected}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/arrow-small-down.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Change Path" Command="{Binding ChangePathCommand}" IsEnabled="{Binding IsTDLSelected}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/change-parent.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Task" IsEnabled="{Binding IsTDLSelected}">
+                <MenuItem Header="Add" Command="{Binding AddTaskCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/add.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Edit" Command="{Binding EditTaskCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/edit.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Delete" Command="{Binding RemoveTaskCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/trash.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Move Up" Command="{Binding MoveUpTaskCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/arrow-small-up.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Move Down" Command="{Binding MoveDownTaskCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/arrow-small-down.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Manage Category" Command="{Binding ManageCategoryCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/bookmark.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Find Task" Command="{Binding FindTaskCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/search.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_View" IsEnabled="{Binding IsButtonEnabled}">
+                <MenuItem Header="Sort" Command="{Binding SortCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/flag.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Filter" Command="{Binding FilterCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/magic-wand.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Statistics" Command="{Binding StatsCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/list-check.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="About" Command="{Binding AboutCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/ToDoListApp;component/resources/menuicons/question.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
